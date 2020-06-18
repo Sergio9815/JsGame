@@ -1,0 +1,156 @@
+*{
+  margin: 0;
+  font-family: 'MuseoModerno', cursive;
+}
+
+/* ------------------------------------------------------------------------------------------------ */
+/* Barra de titulo */
+
+.header {
+  background-color: #1a936f;
+  display: flex;  
+  justify-content: space-between;
+}
+
+.header__container--titulo{
+  color: white;
+  display: flex;
+  font-size: 1.8rem;
+}
+
+.header__container--info{
+  display: flex;
+}
+
+.header__container--info-score{
+  font-size: 2.8rem;
+  margin-top: 13px;
+  margin-right: 100px;
+}
+
+.header__container--info-level{
+  font-size: 2.8rem;
+  margin-top: 13px;
+  margin-right: 100px;
+}
+
+
+/* ------------------------------------------------------------------------------------------------ */
+/* Tablero */
+
+.section {
+  background: linear-gradient(#1a936f, #4a555e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+.section__container--gameboard {
+  height: 60vh;
+  width: 60vh;
+  border-radius: 30%;
+  overflow: hidden;
+  /* max-height: 60vh;
+  max-width: 60vh; */
+}
+
+.color {
+  width: 50%;
+  height: 50%;
+  display: inline-block;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: left;
+}
+
+.celeste {
+  background: #36b5b0;
+}
+
+.celeste.light {
+  background: #45e2dd;
+}
+
+.violeta {
+  background: #ff8ba7;
+}
+
+.violeta.light {
+  background: #fdbccc;
+}
+
+.naranja {
+  background: #fcdf5f;
+}
+
+.naranja.light {
+  background: #f1e5ad;
+}
+
+.verde {
+  background: #7fcd91;
+}
+
+.verde.light {
+  background: #9cfab2;
+}
+
+/* ------------------------------------------------------------------------------------------------ */
+/* Boton */
+
+.btn-start {
+  width: 400px;
+  height: 100px;
+  background: #c3cdd6;
+  opacity: 0.8;
+  color: #f9778f;
+  border: none;
+  border-radius: 50px;
+  font-size: 2.5rem;
+  position: absolute;
+  top: calc(50% - 50px);
+  left: calc(50% - 200px);
+  outline: none;
+}
+
+.btn-start:hover {
+  background: #f9778f;
+  opacity: 0.8;
+  color: #c0c3c5;
+}
+
+.hide {
+  display: none;
+}
+
+
+/* ------------------------------------------------------------------------------------------------ */
+/* Barra inferior */
+
+.footer {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  align-items: center;
+  justify-content: start;
+  height: 100px;
+  width: 100%;
+  background-color: #4a555e;
+}
+.footer a, p{
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  padding-left: 30px;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
