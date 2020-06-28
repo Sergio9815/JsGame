@@ -137,10 +137,10 @@ class Juego {
   }
 
   mostrarNivel() {
-  swal("Congratulations", `Next level`, {
+  /*swal("Congratulations", `Next level`, {
       buttons: false,
       timer: 1000,
-    });
+    });*/
     spanLevel.innerHTML = this.nivel;
     setTimeout(this.siguienteNivel, 1600);
   }
