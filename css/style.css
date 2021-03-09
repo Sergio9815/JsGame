@@ -1,0 +1,239 @@
+/* DECLARACION DE VARIABLES */
+:root {
+  --rose: #e5707e;
+  --turquoise: #94ebcd;
+  --purple: #333456;
+  --grey-light: #dddddd;
+  --grey-dark: #495464;
+  --yellow: #ffefa1;
+  --shadow: 0 0 13px 0 rgba(185, 185, 185, 0.25);
+}
+
+* {
+  margin: 0;
+  font-family: "Akaya Telivigala", cursive;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--purple);
+}
+
+/* ------------------------------------------------------------------------------------------------ */
+/* Barra de titulo */
+
+.header {
+  background-color: white;
+  display: flex;
+  width: 100%;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.header__container--info {
+  display: flex;
+  width: 90%;
+  align-items: center;
+  color: var(--purple);
+  letter-spacing: 2px;
+  /* background-color: lightgreen; */
+  justify-content: space-around;
+}
+
+.header__container--info-title {
+  font-size: 30px;
+}
+
+.header__container--info-time {
+  color: var(--rose);
+  font-size: 25px;
+}
+.header__container--info-level {
+  color: var(--rose);
+  font-size: 25px;
+}
+
+/* ------------------------------------------------------------------------------------------------ */
+/* Tablero */
+
+.Play-section {
+  /* background-color: lightgreen; */
+  display: flex;
+  width: 90%;
+  margin: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.container--gameboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gameboard--card {
+  display: grid;
+  width: 260px;
+  height: 370px;
+  margin: 20px;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  background-color: white;
+  border-radius: 6px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.gameboard--card path {
+  fill: var(--rose);
+}
+
+.gameboard--card svg {
+  width: 60px;
+  margin-top: 50px;
+  margin-left: 15px;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  transform: rotate(-45deg);
+  margin-top: 50px;
+}
+
+.controls path {
+  fill: var(--rose);
+}
+
+.controls svg {
+  width: 20px;
+}
+
+.celeste {
+  background: #36b5b0;
+}
+
+.celeste.light {
+  background: #45e2dd;
+}
+
+.violeta {
+  background: #ff8ba7;
+}
+
+.violeta.light {
+  background: #fdbccc;
+}
+
+.naranja {
+  background: #fcdf5f;
+}
+
+.naranja.light {
+  background: #f1e5ad;
+}
+
+.verde {
+  background: #7fcd91;
+}
+
+.verde.light {
+  background: #9cfab2;
+}
+
+/* ------------------------------------------------------------------------------------------------ */
+/* MENU */
+
+.gameMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--yellow);
+  border-radius: 80px;
+  width: 300px;
+  height: 370px;
+}
+
+.menu--title {
+  font-size: 50px;
+  color: var(--purple);
+  letter-spacing: 5px;
+  font-family: "Raleway", sans-serif;
+  /* border-radius:100px; */
+  background-color: var(--yellow);
+}
+
+.menu--score {
+  color: var(--purple);
+  font-size: 25px;
+}
+
+.btn-start {
+  width: 80%;
+  height: 50px;
+  background: var(--turquoise);
+  color: var(--purple);
+  border-radius: 10px;
+  font-size: 20px;
+  letter-spacing: 1.5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn-start:hover {
+  background: var(--rose);
+  color: white;
+}
+
+.hide {
+  display: none;
+}
+
+/* ------------------------------------------------------------------------------------------------ */
+/* Barra inferior */
+
+.footer {
+  display: flex;
+  position: absolute;
+  overflow: hidden;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height: 40px;
+  width: 100%;
+  background-color: #848ccf;
+}
+
+.footer-text {
+  display: flex;
+  width: 90%;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+}
+
+.fab {
+  color: white;
+  margin-left: 5px;
+  margin-right: 5px;
+  list-style: none;
+  text-align: center;
+}
+
+.footer-text a {
+  color: white;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: none;
+  color: var(--yellow);
+}

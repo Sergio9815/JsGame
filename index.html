@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Simon Say!</title>
+  <link rel="icon" href="./img/iconmonstr-gamepad-2-240.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- BARRA DE INFO -->
+  <header class="header">
+    <div class="header__container--info">
+      <h2 id="header__container--info-title">Simon Say</h2>
+      <p class="header__container--info-time">0:00 <span id="time"></span></p>
+      <p class="header__container--info-level">Lvl: <span id="currentLevel"></span></p>
+    </div>
+  </header>
+
+  <!-- TABLERO DE JUEGO -->
+  <section class="Play-section">
+
+    <!-- INTERFAZ DEL JUEGO -->
+    <div class="container--gameboard">
+      <div class="gameboard--card">
+        <div id="celeste" class="color celeste" data-color="celeste"></div>
+        <div id="violeta" class="color violeta" data-color="violeta"></div>
+        <div id="naranja" class="color naranja" data-color="naranja"></div>
+        <div id="verde" class="color verde" data-color="verde"></div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M24 9h-9v-9h-6v9h-9v6h9v9h6v-9h9z" />
+        </svg>
+        <div class="controls">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="12" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="12" />
+          </svg>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- MENU DEL JUEGO -->
+    <div class="gameMenu">
+      <h1 class="menu--title">Let's go!</h1>
+      <p class="menu--score">Mi puntuación: <span id="score"></span></p>
+      <button id="btnEmpezar" class="btn-start" onclick="empezarJuego()">Empezar a jugar!</button>
+    </div>
+
+  </section>
+
+  <footer class="footer">
+    <div class="footer-text">
+      <p id="footer_author"> Follow me in:  </p>
+      <i class="fab fa-github-alt"></i>
+      <a id="gitLink" href="https://github.com/Sergio9815/RickAndMorty_API">Sergio González</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+  <script src="./typescript/app.js"></script>
+</body>
+
+</html>

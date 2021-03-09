@@ -22,7 +22,7 @@ class Juego {
   inicializar() {
     this.elegirColor = this.elegirColor.bind(this);
     this.siguienteNivel = this.siguienteNivel.bind(this);
-    this.toggleBtnEmpezar();
+    // this.toggleBtnEmpezar();
     this.nivel = 1;
     spanLevel.innerHTML = this.nivel;
     this.score = 0;
@@ -34,13 +34,13 @@ class Juego {
     };
   }
 
-  toggleBtnEmpezar() {
-    if (btnEmpezar.classList.contains("hide")) {
-      btnEmpezar.classList.remove("hide");
-    } else {
-      btnEmpezar.classList.add("hide");
-    }
-  }
+  // toggleBtnEmpezar() {
+  //   if (btnEmpezar.classList.contains("hide")) {
+  //     btnEmpezar.classList.remove("hide");
+  //   } else {
+  //     btnEmpezar.classList.add("hide");
+  //   }
+  // }
 
   generarSecuencia() {
     this.secuencia = new Array(ULTIMO_NIVEL)
@@ -147,8 +147,8 @@ class Juego {
 
   ganador() {
     swal(
-      "Platzi Game",
-      `Felicidades desafío completado!\n Puntuacion: ${this.score}`,
+      "Game finished!",
+      `Desafío completado!\n Puntuacion: ${this.score}`,
       "success"
     ).then(() => {
       this.inicializar();
@@ -158,8 +158,8 @@ class Juego {
 
   perdedor() {
     swal(
-      "Platzi Game",
-      `Fin del juego! :( \n Puntuacion: ${this.score}`,
+      "Game Over!",
+      `Vuelve a intentarlo! :( \n Puntuacion: ${this.score}`,
       "error"
     ).then(() => {
       this.removerEventosClick();
