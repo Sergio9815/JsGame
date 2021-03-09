@@ -2,6 +2,7 @@
 
 const spanLevel = document.querySelector('#currentLevel');
 const spanScore = document.querySelector('#score');
+const difficulty = document.querySelector('#level-Difficulty')
 spanLevel.innerHTML = 0;
 spanScore.innerHTML = 0;
 const celeste = document.getElementById("celeste");
@@ -9,12 +10,13 @@ const violeta = document.getElementById("violeta");
 const naranja = document.getElementById("naranja");
 const verde = document.getElementById("verde");
 const btnEmpezar = document.getElementById("btnEmpezar");
-const ULTIMO_NIVEL = 10;
+let ULTIMO_NIVEL = 10;
 
 class Game {
   constructor() {
     this.inicializar = this.inicializar.bind(this);
     this.inicializar();
+    this.ChangeDifficulty();
     this.generarSecuencia();
     setTimeout(this.siguienteNivel, 500);
   }
@@ -32,6 +34,23 @@ class Game {
       naranja,
       verde,
     };
+  }
+
+  ChangeDifficulty() {
+    switch (difficulty.value) {
+      case "Easy":
+        ULTIMO_NIVEL = 5;
+        break;
+      case "Normal":
+        ULTIMO_NIVEL = 10;
+        break;
+      case "Hard":
+        ULTIMO_NIVEL = 20;
+        break;
+    
+      default:
+        break;
+    }
   }
 
   generarSecuencia() {
