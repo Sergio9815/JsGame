@@ -158,7 +158,7 @@ class Game {
 
   ganador() {
     swal(
-      "Game finished!",
+      "Congratulations!",
       `Desafío completado!\n Puntuacion: ${this.score}`,
       "success"
     ).then(() => {
