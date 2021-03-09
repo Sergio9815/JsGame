@@ -3,6 +3,7 @@
   --rose: #e5707e;
   --turquoise: #94ebcd;
   --purple: #333456;
+  --purple-light: #848ccf;
   --grey-light: #dddddd;
   --grey-dark: #495464;
   --yellow: #ffefa1;
@@ -65,9 +66,9 @@ body {
 .Play-section {
   /* background-color: lightgreen; */
   display: flex;
-  width: 90%;
-  margin: 30px;
-  justify-content: center;
+  width: 70%;
+  margin-top: 60px;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -75,45 +76,70 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--grey-light);
+  border-radius: 10px;
 }
 
 .gameboard--card {
-  display: grid;
-  width: 260px;
+  display: flex;
+  width: 300px;
   height: 370px;
   margin: 20px;
-  grid-template-rows: repeat(4, 1fr);
-  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
   background-color: white;
   border-radius: 6px;
   padding: 15px;
   box-sizing: border-box;
 }
 
-.gameboard--card path {
+.card-grid {
+  display: grid;
+  width: 95%;
+  height: 80%;
+  /* background-color: var(--turquoise); */
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ------------------------------------------------------------------------------------------------ */
+/* Controles */
+
+.card-controls {
+  display: flex;
+  width: 90%;
+  height: 50%;
+  align-items: center;
+  /* background-color: var(--yellow); */
+  justify-content: space-around;
+}
+
+.card-controls path {
   fill: var(--rose);
 }
 
-.gameboard--card svg {
+.card-controls svg {
   width: 60px;
-  margin-top: 50px;
-  margin-left: 15px;
 }
 
-.controls {
+.controls-circle {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  transform: rotate(-45deg);
-  margin-top: 50px;
+  transform: rotate(-25deg);
+  gap: 35px;
 }
 
-.controls path {
-  fill: var(--rose);
+.controls-circle path {
+  fill: var(--purple-light);
 }
 
-.controls svg {
+.controls-circle svg {
   width: 20px;
 }
+
+
+/* ------------------------------------------------------------------------------------------------ */
+/* Colores del tablero */
 
 .celeste {
   background: #36b5b0;
@@ -156,7 +182,7 @@ body {
   align-items: center;
   justify-content: space-around;
   background-color: var(--yellow);
-  border-radius: 80px;
+  border-radius: 6px;
   width: 300px;
   height: 370px;
 }
@@ -193,10 +219,6 @@ body {
   color: white;
 }
 
-.hide {
-  display: none;
-}
-
 /* ------------------------------------------------------------------------------------------------ */
 /* Barra inferior */
 
@@ -210,7 +232,7 @@ body {
   color: white;
   height: 40px;
   width: 100%;
-  background-color: #848ccf;
+  background-color: var(--purple-light);
 }
 
 .footer-text {
@@ -236,4 +258,51 @@ body {
 .footer a:hover {
   text-decoration: none;
   color: var(--yellow);
+}
+
+/* ------------------------------------------------------------------------------------------------ */
+/* RESPONSIVE DESIGN */
+
+
+@media only screen and (max-width: 1000px) {
+  .Play-section {
+    width: 80%;
+  }
+  
+}
+
+@media only screen and (max-width: 835px) {
+
+.Play-section {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.card-grid {
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+}
+
+/* ---------------------------------------------- */
+
+.gameMenu {
+  width: 340px;
+  height: 60px;
+  background-color: var(--purple);
+}
+
+.menu--title {
+  display: none;
+}
+
+.menu--score {
+  display: none;
+}
+
+.btn-start {
+  width: 100%;
+}
+
 }

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Simon Say!</title>
-  <link rel="icon" href="./img/iconmonstr-gamepad-2-240.png">
+  <link rel="icon" href="./icons/iconmonstr-gamepad-2-240.png">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -18,7 +18,7 @@
   <!-- BARRA DE INFO -->
   <header class="header">
     <div class="header__container--info">
-      <h2 id="header__container--info-title">Simon Say</h2>
+      <h2 id="header__container--info-title">Simon Say!</h2>
       <p class="header__container--info-time">0:00 <span id="time"></span></p>
       <p class="header__container--info-level">Lvl: <span id="currentLevel"></span></p>
     </div>
@@ -30,21 +30,20 @@
     <!-- INTERFAZ DEL JUEGO -->
     <div class="container--gameboard">
       <div class="gameboard--card">
-        <div id="celeste" class="color celeste" data-color="celeste"></div>
-        <div id="violeta" class="color violeta" data-color="violeta"></div>
-        <div id="naranja" class="color naranja" data-color="naranja"></div>
-        <div id="verde" class="color verde" data-color="verde"></div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M24 9h-9v-9h-6v9h-9v6h9v9h6v-9h9z" />
-        </svg>
-        <div class="controls">
+        <div class="card-grid">
+          <div id="celeste" class="color celeste" data-color="celeste"></div>
+          <div id="violeta" class="color violeta" data-color="violeta"></div>
+          <div id="naranja" class="color naranja" data-color="naranja"></div>
+          <div id="verde" class="color verde" data-color="verde"></div>
+        </div>
+        <div class="card-controls">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="12" />
+            <path d="M24 9h-9v-9h-6v9h-9v6h9v9h6v-9h9z" />
           </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="12" />
-          </svg>
-          </svg>
+          <div class="controls-circle">
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle" class="svg-inline--fa fa-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"></path></svg>
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle" class="svg-inline--fa fa-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"></path></svg>
+          </div>
         </div>
       </div>
     </div>
@@ -53,7 +52,7 @@
     <div class="gameMenu">
       <h1 class="menu--title">Let's go!</h1>
       <p class="menu--score">Mi puntuación: <span id="score"></span></p>
-      <button id="btnEmpezar" class="btn-start" onclick="empezarJuego()">Empezar a jugar!</button>
+      <button id="btnEmpezar" class="btn-start" onclick="play()">Empezar a jugar!</button>
     </div>
 
   </section>

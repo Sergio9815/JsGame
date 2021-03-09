@@ -11,7 +11,7 @@ const verde = document.getElementById("verde");
 const btnEmpezar = document.getElementById("btnEmpezar");
 const ULTIMO_NIVEL = 10;
 
-class Juego {
+class Game {
   constructor() {
     this.inicializar = this.inicializar.bind(this);
     this.inicializar();
@@ -33,14 +33,6 @@ class Juego {
       verde,
     };
   }
-
-  // toggleBtnEmpezar() {
-  //   if (btnEmpezar.classList.contains("hide")) {
-  //     btnEmpezar.classList.remove("hide");
-  //   } else {
-  //     btnEmpezar.classList.add("hide");
-  //   }
-  // }
 
   generarSecuencia() {
     this.secuencia = new Array(ULTIMO_NIVEL)
@@ -169,6 +161,6 @@ class Juego {
   }
 }
 
-function empezarJuego() {
-  window.juego = new Juego();
+function play() {
+  window.game = new Game();
 }
