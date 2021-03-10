@@ -289,8 +289,6 @@ body {
   grid-template-columns: repeat(1, 1fr);
 }
 
-/* ---------------------------------------------- */
-
 .gameMenu {
   width: 340px;
   height: 60px;
@@ -310,3 +308,48 @@ body {
 }
 
 }
+
+/* MOBILE DESIGN */
+
+@media only screen and (min-width: 835px) {
+
+  .Play-section {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 200px;
+  }
+  
+  
+.gameboard--card {
+  width: 500px;
+  height: 670px;
+}
+
+  .card-grid {
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  .gameMenu {
+    width: 440px;
+    height: 60px;
+    background-color: var(--purple);
+  }
+  
+  .menu--title {
+    display: none;
+  }
+  
+  .menu--score {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: var(--yellow);
+  }
+  
+  .btn-start {
+    width: 100%;
+  }
+  
+  }
