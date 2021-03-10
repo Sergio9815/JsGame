@@ -266,24 +266,6 @@ body {
 /* ------------------------------------------------------------------------------------------------ */
 /* RESPONSIVE DESIGN */
 
-@media only screen and (max-width: 1920px) {
-  .footer {
-    position: absolute;
-  }
-  
-}
-
-@media only screen and (max-width: 1000px) {
-  .Play-section {
-    width: 80%;
-  }
-
-  .footer {
-    position: absolute;
-  }
-  
-}
-
 @media only screen and (max-width: 835px) {
 
 .Play-section {
@@ -329,6 +311,25 @@ body {
 }
 
 }
+
+@media only screen and (max-width: 1920px) {
+  .footer {
+    position: absolute;
+  }
+  
+}
+
+@media only screen and (max-width: 1000px) {
+  .Play-section {
+    width: 80%;
+  }
+
+  .footer {
+    position: absolute;
+  }
+  
+}
+
 
 /* ------------------------------------------------------------------------------------------------ */
 /* MOBILE DESIGN */
