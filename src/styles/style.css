@@ -231,6 +231,7 @@ body {
   display: flex;
   overflow: hidden;
   bottom: 0;
+  position: absolute;
   align-items: center;
   justify-content: center;
   color: white;
@@ -267,21 +268,9 @@ body {
 /* ------------------------------------------------------------------------------------------------ */
 /* RESPONSIVE DESIGN */
 
-
-@media only screen and (max-width: 1920px) {
-  .footer {
-    position: absolute;
-  }
-  
-}
-
 @media only screen and (max-width: 1000px) {
   .Play-section {
     width: 80%;
-  }
-
-  .footer {
-    position: absolute;
   }
   
 }
@@ -321,10 +310,6 @@ body {
   width: 100%;
 }
 
-.footer {
-  position: unset;
-}
-
 .footer-text {
   justify-content: center;
   align-items: center;
@@ -332,11 +317,14 @@ body {
 
 }
 
-
 /* ------------------------------------------------------------------------------------------------ */
 /* MOBILE DESIGN */
 
 @media only screen and (max-width: 500px) {
+
+  .header {
+    flex-direction: column;
+  }
 
   .Play-section {
     margin-top: 10px;
