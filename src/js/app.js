@@ -1,183 +1,223 @@
 /*jshint esversion: 9 */
 
+/* --- --- -- - ELEMENTOS DE JUEGO  - -- --- --- */
 const spanLevel = document.querySelector('#currentLevel');
 const spanScore = document.querySelector('#score');
-const difficulty = document.querySelector('#level-Difficulty')
-spanLevel.innerHTML = 0;
-spanScore.innerHTML = 0;
-const celeste = document.getElementById("celeste");
-const violeta = document.getElementById("violeta");
-const naranja = document.getElementById("naranja");
-const verde = document.getElementById("verde");
+const selectdifficulty = document.querySelector('#level-Difficulty')
+let LAST_LEVEL;
+
+/* --- --- -- - DECLRACION DE COLORES  - -- --- --- */
+const blue = document.getElementById("blue");
+const rose = document.getElementById("rose");
+const yellow = document.getElementById("yellow");
+const green = document.getElementById("green");
+
+/* --- --- -- - DEFINICION DEL BOTON DE PLAY  - -- --- --- */
 const btnEmpezar = document.getElementById("btnEmpezar");
-let ULTIMO_NIVEL = 10;
 
 class Game {
   constructor() {
-    this.inicializar = this.inicializar.bind(this);
-    this.inicializar();
-    this.ChangeDifficulty();
-    this.generarSecuencia();
-    setTimeout(this.siguienteNivel, 500);
+    /* --- --- -- - INICIALIZANDO VARIABLES  - -- --- --- */
+    spanLevel.innerHTML = 0;
+    spanScore.innerHTML = 0;
+    this.initialize = this.initialize.bind(this);
+    this.initialize();
+    this.ChangeDifficulty(); 
+    this.generateSequence(); // ARRAY CON VALORES A ILUMINAR
+    setTimeout(this.nextLevel, 500); // EMPEZAR A JUGAR
   }
 
-  inicializar() {
-    this.elegirColor = this.elegirColor.bind(this);
-    this.siguienteNivel = this.siguienteNivel.bind(this);
-    // this.toggleBtnEmpezar();
-    this.nivel = 1;
-    spanLevel.innerHTML = this.nivel;
+  initialize() {
+    this.chooseColor = this.chooseColor.bind(this);
+    this.nextLevel = this.nextLevel.bind(this);
+
+    //DEFINICION DE LOS VALORES INICIALES DEL JUEGO
+    this.level = 1;
     this.score = 0;
-    this.colores = {
-      celeste,
-      violeta,
-      naranja,
-      verde,
+    spanLevel.innerHTML = this.level;
+
+    //OBJETO PARA MANIPULAR LOS COLORES DEL TABLERO
+    this.colors = {
+      blue,
+      rose,
+      yellow,
+      green,
     };
   }
 
+  // DIFICULTAD DE LA PARTIDA
   ChangeDifficulty() {
-    switch (difficulty.value) {
+    switch (selectdifficulty.value) {
       case "Easy":
-        ULTIMO_NIVEL = 5;
+        LAST_LEVEL = 5;
         break;
       case "Normal":
-        ULTIMO_NIVEL = 10;
+        LAST_LEVEL = 10;
         break;
       case "Hard":
-        ULTIMO_NIVEL = 20;
+        LAST_LEVEL = 20;
         break;
-    
+
       default:
         break;
     }
   }
 
-  generarSecuencia() {
-    this.secuencia = new Array(ULTIMO_NIVEL)
+  // GENERAR ARREGLO DE VALORES
+  generateSequence() {
+    this.sequence = new Array(LAST_LEVEL)
       .fill(0)
       .map((n) => Math.floor(Math.random() * 4));
   }
 
-  siguienteNivel() {
-    this.subNivel = 0;
-    this.iluminarSecuencia();
-    this.agregarEventosCLick();
-  }
-
-  transformarNumeroAColor(num) {
+  // SE ASIGNA UN NOMBRE DE COLOR A CADA NÚMERO
+  numberToColor(num) {
     switch (num) {
       case 0:
-        return "celeste";
+        return "blue";
       case 1:
-        return "violeta";
+        return "rose";
       case 2:
-        return "naranja";
+        return "yellow";
       case 3:
-        return "verde";
+        return "green";
     }
   }
 
-  transformarColorANumero(color) {
+  // SE ASIGNA UN VALOR NUMÉRICO A LOS NOMBRES DE CADA COLOR
+  colorToNumber(color) {
     switch (color) {
-      case "celeste":
+      case "blue":
         return 0;
-      case "violeta":
+      case "rose":
         return 1;
-      case "naranja":
+      case "yellow":
         return 2;
-      case "verde":
+      case "green":
         return 3;
     }
   }
+  
+  // ELIMINA LA CLASE DE COLORES ILUMINADOS EN CSS
+  turnOffColor(color) {
+    this.colors[color].classList.remove("light");
+  }
 
-  iluminarSecuencia() {
-    for (let i = 0; i < this.nivel; i++) {
-      const color = this.transformarNumeroAColor(this.secuencia[i]);
-      setTimeout(() => this.iluminarColor(color), 1000 * i);
+  // AGREGA LA CLASE DE COLORES ILUMINADOS EN CSS
+  illuminateColor(color) {
+    this.colors[color].classList.add("light");
+    setTimeout(() => this.turnOffColor(color), 350);
+  }
+  
+  // ILUMINAR COLORES DEL TABLERO DE JUEGO
+  illuminateSequence() {
+    for (let i = 0; i < this.level; i++) {
+      /* SE GUARDA EN LA VARIABLE COLOR EL NOMBRE DEL COLOR 
+      CORRESPONDIENTE AL NUMERO DE SECUENCIA */
+      const color = this.numberToColor(this.sequence[i]);
+      setTimeout(() => this.illuminateColor(color), 1000 * i);
     }
   }
 
-  iluminarColor(color) {
-    this.colores[color].classList.add("light");
-    setTimeout(() => this.apagarColor(color), 350);
+  // AVANZAR AL SIGUIENTE NIVEL
+  nextLevel() {
+    this.levelUp = 0;
+    this.illuminateSequence();
+    this.addEventsClick();
   }
 
-  apagarColor(color) {
-    this.colores[color].classList.remove("light");
+  // SE AGREGAN LOS EVENTOS DE CLICK PARA CADA COLOR
+  addEventsClick() {
+    this.colors.blue.addEventListener("click", this.chooseColor);
+    this.colors.rose.addEventListener("click", this.chooseColor);
+    this.colors.yellow.addEventListener("click", this.chooseColor);
+    this.colors.green.addEventListener("click", this.chooseColor);
   }
 
-  agregarEventosCLick() {
-    this.colores.celeste.addEventListener("click", this.elegirColor);
-    this.colores.violeta.addEventListener("click", this.elegirColor);
-    this.colores.naranja.addEventListener("click", this.elegirColor);
-    this.colores.verde.addEventListener("click", this.elegirColor);
+  // SE ELIMINAN LOS EVENTOS DE CLICK PARA CADA COLOR
+  removeEventsClick() {
+    this.colors.blue.removeEventListener("click", this.chooseColor);
+    this.colors.rose.removeEventListener("click", this.chooseColor);
+    this.colors.yellow.removeEventListener("click", this.chooseColor);
+    this.colors.green.removeEventListener("click", this.chooseColor);
   }
 
-  removerEventosClick() {
-    this.colores.celeste.removeEventListener("click", this.elegirColor);
-    this.colores.violeta.removeEventListener("click", this.elegirColor);
-    this.colores.naranja.removeEventListener("click", this.elegirColor);
-    this.colores.verde.removeEventListener("click", this.elegirColor);
-  }
+  chooseColor(ev) {
+    /* SE GUARDA EN UNA VARIABLE EL NOMBRE DEL COLOR CLICKEADO, 
+    POR MEDIO DEL VALOR DEL DATA-SET DEFINIDO EN EL HTML */
+    const nameColor = ev.target.dataset.color;
 
-  elegirColor(ev) {
-    const nombreColor = ev.target.dataset.color;
-    const numeroColor = this.transformarColorANumero(nombreColor);
-    this.iluminarColor(nombreColor);
-    if (numeroColor === this.secuencia[this.subNivel]) {
-      this.subNivel++;
-      if (this.subNivel === this.nivel) {
-        this.nivel++;
-        this.removerEventosClick();
-        if (this.nivel === ULTIMO_NIVEL + 1) {
+    /* SE OBTIENE EL VALOR NUMERICO QUE CORRESPONDE AL COLOR SELECCIONADO */
+    const numberColor = this.colorToNumber(nameColor);
+
+    /* SE ILUMINA EL COLOR CLICKEADO */
+    this.illuminateColor(nameColor);
+
+    // VERIFICA QUE EL COLOR CLICKEADO SEA IGUAL AL DE LA SECUENCIA
+    if (numberColor === this.sequence[this.levelUp]) {
+      this.levelUp++;
+
+      // PASAR AL SIGUIENTE NIVEL
+      if (this.levelUp === this.level) {
+        this.level++;
+        this.removeEventsClick();
+
+        // VERIFICA SI EL NIVEL ACTUAL ES EL ULTIMO NIVEL
+        if (this.level === LAST_LEVEL + 1) {
           //GANO
           this.score += 100;
           spanScore.innerHTML = this.score;
-          this.ganador();
+          this.winner();
         } else {
           this.score += 100;
           spanScore.innerHTML = this.score;
-          this.mostrarNivel();
+          this.showLevel();
         }
       }
     } else {
-      //PERDIO
-      this.perdedor();
+      //GAME OVER
+      this.gameOver();
     }
   }
 
-  mostrarNivel() {
-  /*swal("Congratulations", `Next level`, {
-      buttons: false,
-      timer: 1000,
-    });*/
-    spanLevel.innerHTML = this.nivel;
-    setTimeout(this.siguienteNivel, 1600);
+  // SE MUESTRA EN EL HEADER EL NIVEL ACTUAL Y SE PASA AL SIGUIENTE 
+  showLevel() {
+    spanLevel.innerHTML = this.level;
+    setTimeout(this.nextLevel, 1600);
   }
 
-  ganador() {
-    swal(
-      "Congratulations!",
-      `Desafío completado!\n Puntuacion: ${this.score}`,
-      "success"
-    ).then(() => {
-      this.inicializar();
+  winner() {
+    // SE MUESTRA LA VENTANA EMERGENTE PARA EL GANADOR
+    Swal.fire({
+      icon: 'success',
+      title: 'YOU WIN!',
+      timer: 10000,
+      confirmButtonText: `<i class="fas fa-gamepad"></i> GREAT!`,
+      timerProgressBar: true,
+      text: `You're great, congrats`,
+      footer: `SCORE: ${this.score} PTS`
+    }).then(() => {
+      this.initialize();
     });
     spanScore.innerHTML = 0;
   }
 
-  perdedor() {
-    swal(
-      "Game Over!",
-      `Vuelve a intentarlo! :( \n Puntuacion: ${this.score}`,
-      "error"
-    ).then(() => {
-      this.removerEventosClick();
-      this.inicializar();
+  gameOver() {
+    Swal.fire({
+      icon: 'error',
+      title: 'GAME OVER!',
+      timer: 10000,
+      confirmButtonText: `<i class="fas fa-gamepad"></i> PLAY AGAIN!`,
+      timerProgressBar: true,
+      text: `Oops, try again! :(`,
+      footer: `SCORE: ${this.score} PTS`
+    }).then(() => {
+      this.removeEventsClick();
+      this.initialize();
     });
-    this.nivel = 0
+    this.level = 0
   }
+
 }
 
 function play() {

@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="./styles/style.css">
   <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 </head>
@@ -19,8 +20,8 @@
   <!-- BARRA DE INFO -->
   <header class="header">
     <div class="header__container--info">
-      <h2 id="header__container--info-title">Simon Say!</h2>
-      <p class="header__container--difficulty">Difficulty:  
+      <h2 class="animate__animated animate__fadeInDown" id="header__container--info-title">Simon Say!</h2>
+      <p class="header__container--difficulty">Difficulty:
         <select name="difficulty" id="level-Difficulty">
           <option value="Easy">Easy (+5 lvl)</option>
           <option value="Normal">Normal (+10 lvl)</option>
@@ -38,18 +39,28 @@
     <div class="container--gameboard">
       <div class="gameboard--card">
         <div class="card-grid">
-          <div id="celeste" class="color celeste" data-color="celeste"></div>
-          <div id="violeta" class="color violeta" data-color="violeta"></div>
-          <div id="naranja" class="color naranja" data-color="naranja"></div>
-          <div id="verde" class="color verde" data-color="verde"></div>
+          <div id="blue" class="color blue" data-color="blue"></div>
+          <div id="rose" class="color rose" data-color="rose"></div>
+          <div id="yellow" class="color yellow" data-color="yellow"></div>
+          <div id="green" class="color green" data-color="green"></div>
         </div>
         <div class="card-controls">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M24 9h-9v-9h-6v9h-9v6h9v9h6v-9h9z" />
           </svg>
           <div class="controls-circle">
-            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle" class="svg-inline--fa fa-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"></path></svg>
-            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle" class="svg-inline--fa fa-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"></path></svg>
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle"
+              class="svg-inline--fa fa-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512">
+              <path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z">
+              </path>
+            </svg>
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle"
+              class="svg-inline--fa fa-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512">
+              <path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z">
+              </path>
+            </svg>
           </div>
         </div>
       </div>
@@ -57,22 +68,22 @@
 
     <!-- MENU DEL JUEGO -->
     <div class="gameMenu">
-      <h1 class="menu--title">Let's go!</h1>
-      <p class="menu--score">Mi puntuación: <span id="score"></span></p>
-      <button id="btnEmpezar" class="btn-start" onclick="play()">Empezar a jugar!</button>
+      <h1 class="menu--title animate__animated animate__tada">Let's go!</h1>
+      <p class="menu--score">SCORE: <span id="score"></span></p>
+      <button id="btnEmpezar" class="btn-start" onclick="play()">PLAY!</button>
     </div>
 
   </section>
 
   <footer class="footer">
     <div class="footer-text">
-      <p id="footer_author"> Follow me in:  </p>
+      <p id="footer_author"> Follow me in: </p>
       <i class="fab fa-github-alt"></i>
       <a id="gitLink" href="https://github.com/Sergio9815/Simon_Say_JS">Sergio González</a>
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.6/dist/sweetalert2.all.min.js"></script>
   <script src="./js/app.js"></script>
 </body>
 

@@ -145,35 +145,35 @@ body {
 /* ------------------------------------------------------------------------------------------------ */
 /* Colores del tablero */
 
-.celeste {
+.blue {
   background: #36b5b0;
 }
 
-.celeste.light {
+.blue.light {
   background: #45e2dd;
 }
 
-.violeta {
+.rose {
   background: #ff8ba7;
 }
 
-.violeta.light {
+.rose.light {
   background: #fdbccc;
 }
 
-.naranja {
+.yellow {
   background: #fcdf5f;
 }
 
-.naranja.light {
+.yellow.light {
   background: #f1e5ad;
 }
 
-.verde {
+.green {
   background: #7fcd91;
 }
 
-.verde.light {
+.green.light {
   background: #9cfab2;
 }
 
@@ -203,6 +203,7 @@ body {
 .menu--score {
   color: var(--purple);
   font-size: 25px;
+  letter-spacing: 7px;
 }
 
 .btn-start {
@@ -212,7 +213,7 @@ body {
   color: var(--purple);
   border-radius: 10px;
   font-size: 20px;
-  letter-spacing: 1.5px;
+  letter-spacing: 7px;
   border: none;
   outline: none;
   cursor: pointer;
