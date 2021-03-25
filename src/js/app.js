@@ -3,8 +3,35 @@
 /* --- --- -- - ELEMENTOS DE JUEGO  - -- --- --- */
 const spanLevel = document.querySelector('#currentLevel');
 const spanScore = document.querySelector('#score');
-const selectdifficulty = document.querySelector('#level-Difficulty')
-let LAST_LEVEL;
+// const selectdifficulty = document.querySelector('#level-Difficulty')
+let LAST_LEVEL = 300;
+
+/* --- --- -- - GUARDAR MEJOR PUNTUACIÓN  - -- --- --- */
+function getRecord() {
+  let record = localStorage.getItem('currentRecord')
+  if (record === null) {
+    return '0'
+  }
+  else {
+    return record;
+  }
+}
+
+function updateScore(score) {
+  spanScore.innerHTML = `${score}`;
+}
+
+function saveScore(score) {
+  let record = getRecord();
+  if (score > record) {
+    localStorage.setItem('currentRecord', score);
+  }
+}
+
+window.onload = function () {
+  let score = getRecord();
+  updateScore(score);
+}
 
 /* --- --- -- - DECLRACION DE COLORES  - -- --- --- */
 const blue = document.getElementById("blue");
@@ -19,10 +46,9 @@ class Game {
   constructor() {
     /* --- --- -- - INICIALIZANDO VARIABLES  - -- --- --- */
     spanLevel.innerHTML = 0;
-    spanScore.innerHTML = 0;
     this.initialize = this.initialize.bind(this);
     this.initialize();
-    this.ChangeDifficulty(); 
+    // this.ChangeDifficulty();
     this.generateSequence(); // ARRAY CON VALORES A ILUMINAR
     setTimeout(this.nextLevel, 500); // EMPEZAR A JUGAR
   }
@@ -46,24 +72,25 @@ class Game {
   }
 
   // DIFICULTAD DE LA PARTIDA
-  ChangeDifficulty() {
-    switch (selectdifficulty.value) {
-      case "Easy":
-        LAST_LEVEL = 5;
-        break;
-      case "Normal":
-        LAST_LEVEL = 10;
-        break;
-      case "Hard":
-        LAST_LEVEL = 20;
-        break;
+  // ChangeDifficulty() {
+  //   switch (selectdifficulty.value) {
+  //     case "Easy":
+  //       LAST_LEVEL = 5;
+  //       break;
+  //     case "Normal":
+  //       LAST_LEVEL = 10;
+  //       break;
+  //     case "Hard":
+  //       LAST_LEVEL = 20;
+  //       break;
 
-      default:
-        break;
-    }
-  }
+  //     default:
+  //       break;
+  //   }
+  // }
 
   // GENERAR ARREGLO DE VALORES
+  
   generateSequence() {
     this.sequence = new Array(LAST_LEVEL)
       .fill(0)
@@ -97,7 +124,7 @@ class Game {
         return 3;
     }
   }
-  
+
   // ELIMINA LA CLASE DE COLORES ILUMINADOS EN CSS
   turnOffColor(color) {
     this.colors[color].classList.remove("light");
@@ -108,7 +135,7 @@ class Game {
     this.colors[color].classList.add("light");
     setTimeout(() => this.turnOffColor(color), 350);
   }
-  
+
   // ILUMINAR COLORES DEL TABLERO DE JUEGO
   illuminateSequence() {
     for (let i = 0; i < this.level; i++) {
@@ -166,11 +193,11 @@ class Game {
         if (this.level === LAST_LEVEL + 1) {
           //GANO
           this.score += 100;
-          spanScore.innerHTML = this.score;
+          updateScore(this.score);
           this.winner();
         } else {
           this.score += 100;
-          spanScore.innerHTML = this.score;
+          updateScore(this.score);
           this.showLevel();
         }
       }
@@ -195,11 +222,14 @@ class Game {
       confirmButtonText: `<i class="fas fa-gamepad"></i> GREAT!`,
       timerProgressBar: true,
       text: `You're great, congrats`,
-      footer: `SCORE: ${this.score} PTS`
+      footer: `SCORE: ${this.score}`
     }).then(() => {
+      location.reload();
       this.initialize();
     });
-    spanScore.innerHTML = 0;
+    saveScore(this.score);
+    let record = getRecord(this.score);
+    updateScore(record);
   }
 
   gameOver() {
@@ -210,12 +240,16 @@ class Game {
       confirmButtonText: `<i class="fas fa-gamepad"></i> PLAY AGAIN!`,
       timerProgressBar: true,
       text: `Oops, try again! :(`,
-      footer: `SCORE: ${this.score} PTS`
+      footer: `SCORE: ${this.score}`
     }).then(() => {
       this.removeEventsClick();
+      location.reload();
       this.initialize();
     });
     this.level = 0
+    saveScore(this.score);
+    let record = getRecord(this.score);
+    updateScore(record);
   }
 
 }

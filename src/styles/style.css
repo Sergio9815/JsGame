@@ -54,9 +54,9 @@ body {
   font-size: 30px;
 }
 
-.header__container--difficulty {
+.timer {
+  font-size: 25px;
   color: var(--rose);
-  font-size: 20px;
 }
 
 .header__container--info-level {
@@ -192,18 +192,29 @@ body {
 }
 
 .menu--title {
+  font-family: 'Train One', cursive;
   font-size: 50px;
   color: var(--purple);
   letter-spacing: 5px;
-  font-family: "Raleway", sans-serif;
-  /* border-radius:100px; */
-  background-color: var(--yellow);
 }
 
-.menu--score {
+.score__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.menu--score, #score {
+  font-family: 'Train One', cursive;
   color: var(--purple);
   font-size: 25px;
   letter-spacing: 7px;
+}
+
+#score {
+  font-weight: bold;
+  font-size: 35px;
 }
 
 .btn-start {
@@ -301,13 +312,22 @@ body {
   display: none;
 }
 
-.menu--score {
+.score__container {
+  flex-direction: row;
+  gap: 15px;
+}
+.menu--score, #score {
   margin: 15px 0 5px 0;
   color: var(--yellow);
+  font-size: 20px;
 }
 
 .btn-start {
   width: 100%;
+}
+
+.footer {
+  position: relative;
 }
 
 .footer-text {

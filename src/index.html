@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Train+One&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="./styles/style.css">
@@ -21,13 +22,14 @@
   <header class="header">
     <div class="header__container--info">
       <h2 class="animate__animated animate__fadeInDown" id="header__container--info-title">Simon Say!</h2>
-      <p class="header__container--difficulty">Difficulty:
-        <select name="difficulty" id="level-Difficulty">
-          <option value="Easy">Easy (+5 lvl)</option>
-          <option value="Normal">Normal (+10 lvl)</option>
-          <option value="Hard">Hard (+20 lvl)</option>
-        </select>
-      </p>
+      <div class="timer" id="timerJS">00:00:00</div>
+      <!-- <p class="header__container--difficulty">Difficulty:
+          <select name="difficulty" id="level-Difficulty">
+            <option value="Easy">Easy (+5 lvl)</option>
+            <option value="Normal">Normal (+10 lvl)</option>
+            <option value="Hard">Hard (+20 lvl)</option>
+          </select>
+        </p> -->
       <p class="header__container--info-level">Lvl: <span id="currentLevel"></span></p>
     </div>
   </header>
@@ -69,8 +71,11 @@
     <!-- MENU DEL JUEGO -->
     <div class="gameMenu">
       <h1 class="menu--title animate__animated animate__tada">Let's go!</h1>
-      <p class="menu--score">SCORE: <span id="score"></span></p>
-      <button id="btnEmpezar" class="btn-start" onclick="play()">PLAY!</button>
+      <div class="score__container">
+        <p class="menu--score">Best Score</p>
+        <span id="score"></span>
+      </div>
+      <button data-estado="jugando" id="btnEmpezar" class="btn-start" onclick="play(); goTimer();">PLAY!</button>
     </div>
 
   </section>
@@ -84,6 +89,7 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.6/dist/sweetalert2.all.min.js"></script>
+  <script type="module" src="./js/timer.js"></script>
   <script src="./js/app.js"></script>
 </body>
 
