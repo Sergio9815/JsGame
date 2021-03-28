@@ -1,0 +1,27 @@
+{
+  "name": "simon_say_js",
+  "version": "1.0.0",
+  "description": "Programming a Simon Says using JavaScript",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sergio9815/Simon_Say_JS.git"
+  },
+  "keywords": [
+    "Js",
+    "ModuleJS",
+    "Class",
+    "Timer",
+    "SweetAlert", 
+    "LocalStorage"
+  ],
+  "author": "Sergio Gonzalez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sergio9815/Simon_Say_JS/issues"
+  },
+  "homepage": "https://github.com/Sergio9815/Simon_Say_JS#readme"
+}
