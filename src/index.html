@@ -20,7 +20,7 @@
 
   <!-- BARRA DE INFO -->
   <header class="header">
-    <div class="header__container--info">
+    <section class="header__container--info">
       <h2 class="animate__animated animate__fadeInDown" id="header__container--info-title">Simon Say!</h2>
       <div class="timer" id="timerJS">00:00:00</div>
       <!-- <p class="header__container--difficulty">Difficulty:
@@ -31,15 +31,15 @@
           </select>
         </p> -->
       <p class="header__container--info-level">Lvl: <span id="currentLevel"></span></p>
-    </div>
+    </section>
   </header>
 
   <!-- TABLERO DE JUEGO -->
-  <section class="Play-section">
+  <main class="Play-section">
 
     <!-- INTERFAZ DEL JUEGO -->
-    <div class="container--gameboard">
-      <div class="gameboard--card">
+    <section class="container--gameboard">
+      <article class="gameboard--card">
         <div class="card-grid">
           <div id="blue" class="color blue" data-color="blue"></div>
           <div id="rose" class="color rose" data-color="rose"></div>
@@ -65,27 +65,28 @@
             </svg>
           </div>
         </div>
-      </div>
-    </div>
+      </article>
+    </section>
 
     <!-- MENU DEL JUEGO -->
-    <div class="gameMenu">
+    <section class="gameMenu">
       <h1 class="menu--title animate__animated animate__tada">Let's go!</h1>
-      <div class="score__container">
+      <article class="score__container">
         <p class="menu--score">Best Score</p>
         <span id="score"></span>
-      </div>
+      </article>
       <button data-estado="jugando" id="btnEmpezar" class="btn-start" onclick="play(); goTimer();">PLAY!</button>
-    </div>
+    </section>
 
-  </section>
+  </main>
 
+    <!-- CONTACT BAR -->
   <footer class="footer">
-    <div class="footer-text">
+    <section class="footer-text">
       <p id="footer_author"> Follow me in: </p>
       <i class="fab fa-github-alt"></i>
       <a id="gitLink" href="https://github.com/Sergio9815/Simon_Say_JS">Sergio González</a>
-    </div>
+    </section>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.6/dist/sweetalert2.all.min.js"></script>
