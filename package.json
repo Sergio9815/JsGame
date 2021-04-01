@@ -15,7 +15,7 @@
     "ModuleJS",
     "Class",
     "Timer",
-    "SweetAlert", 
+    "SweetAlert",
     "LocalStorage"
   ],
   "author": "Sergio Gonzalez",
@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/Sergio9815/Simon_Say_JS/issues"
   },
-  "homepage": "https://github.com/Sergio9815/Simon_Say_JS#readme"
+  "homepage": "https://github.com/Sergio9815/Simon_Say_JS#readme",
+  "dependencies": {
+    "@sagb_24/mytimerjs": "^1.0.0"
+  }
 }

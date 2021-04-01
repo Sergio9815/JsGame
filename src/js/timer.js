@@ -1,12 +1,11 @@
-import Timer from "./myTimer.js";
+import Timer from "../../node_modules/@sagb_24/mytimerjs/lib/myTimer.js";
 
-const play = document.querySelector('#btnEmpezar')
-
-function goTimer() {
-  var init = new Timer();
-  init.start('timerJS');//USE HTML ELEMENT ID
-}
+const play = document.querySelector('#btn-Start')
 
 play.addEventListener('click', (e) => {
-  goTimer();
+  const init = new Timer({
+    idContainer: 'timerJS',  //USE HTML ELEMENT ID
+  });
+
+  init.start();
 })
