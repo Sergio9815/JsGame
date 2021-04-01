@@ -1,4 +1,4 @@
-import Timer from "../../node_modules/@sagb_24/mytimerjs/lib/myTimer.js";
+import Timer from "../node_modules/@sagb_24/mytimerjs/lib/myTimer.js";
 
 const play = document.querySelector('#btn-Start')
 
