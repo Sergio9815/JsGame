@@ -25,6 +25,6 @@
   },
   "homepage": "https://github.com/Sergio9815/Simon_Say_JS#readme",
   "dependencies": {
-    "@sagb_24/mytimerjs": "^1.0.0"
+    "@sagb_24/mytimerjs": "^1.3.0"
   }
 }
