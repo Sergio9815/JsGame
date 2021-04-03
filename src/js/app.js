@@ -219,7 +219,7 @@ class Game {
     // SE MUESTRA LA VENTANA EMERGENTE PARA EL GANADOR
     Swal.fire({
       icon: 'success',
-      title: 'YOU WIN!',
+      title: `🆈🅾🆄 🆆🅸🅽`,
       timer: 10000,
       confirmButtonText: `<i class="fas fa-gamepad"></i> GREAT!`,
       timerProgressBar: true,
