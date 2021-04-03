@@ -3,8 +3,10 @@
 /* --- --- -- - ELEMENTOS DE JUEGO  - -- --- --- */
 const spanLevel = document.querySelector('#currentLevel');
 const spanScore = document.querySelector('#score');
+const finalTime = document.querySelector('#timerJS');
+
 // const selectdifficulty = document.querySelector('#level-Difficulty')
-let LAST_LEVEL = 300;
+let LAST_LEVEL = 50;
 
 /* --- --- -- - GUARDAR MEJOR PUNTUACIÓN  - -- --- --- */
 function getRecord() {
@@ -222,7 +224,7 @@ class Game {
       confirmButtonText: `<i class="fas fa-gamepad"></i> GREAT!`,
       timerProgressBar: true,
       text: `You're great, congrats`,
-      footer: `SCORE: ${this.score}`
+      footer: `| Time: ${finalTime.textContent}   ||   Score: ${this.score} |`
     }).then(() => {
       location.reload();
       this.initialize();
@@ -235,12 +237,12 @@ class Game {
   gameOver() {
     Swal.fire({
       icon: 'error',
-      title: 'GAME OVER!',
+      title: ` 🅶🅰🅼🅴 🅾🆅🅴🆁`,
       timer: 10000,
       confirmButtonText: `<i class="fas fa-gamepad"></i> PLAY AGAIN!`,
       timerProgressBar: true,
-      text: `Oops, try again! :(`,
-      footer: `SCORE: ${this.score}`
+      text: `Oops, try again...`,
+      footer: `| Time: ${finalTime.textContent}   ||   Score: ${this.score} |`
     }).then(() => {
       this.removeEventsClick();
       location.reload();
