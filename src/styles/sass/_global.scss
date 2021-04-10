@@ -13,12 +13,17 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: #F4F8FD;
+  background-color: #111116;
 }
 
 %flex {
   display: flex;
   align-items: center;
+}
+
+%shadow {
+  -webkit-box-shadow: 0px 8px 10px -6px #0000005b;
+  box-shadow: 0px 8px 10px -6px #0000005b;
 }
 
 /* ------------------------------------------------------------------------------------------------ */

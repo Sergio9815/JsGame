@@ -5,6 +5,7 @@
 
 .footer {
   @extend %flex;
+  @extend %shadow;
   overflow: hidden;
   bottom: 0;
   position: absolute;
@@ -12,7 +13,6 @@
   color: $color-font;
   height: 40px;
   width: 100%;
-  background-color: $color-game;
 }
 
 .footer-text {
@@ -36,7 +36,7 @@
 }
 .footer a:hover {
   text-decoration: none;
-  color: $color-yellow;
+  color: $color-title;
 }
 
 /* ------------------------------------------------------------------------------------------------ */

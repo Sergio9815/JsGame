@@ -12,7 +12,7 @@
   overflow: hidden;
   position: relative;
   z-index: 1;
-  box-shadow: $color-shadow;
+  @extend %shadow;
 }
 
 .header__container--info {
