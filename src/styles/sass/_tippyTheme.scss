@@ -1,0 +1,23 @@
+/* ------------------------------------------------------------------------------------------------ */
+
+/* --- --- -- TIPPY THEME -- --- --- */
+
+.tippy-box[data-theme~="colorTippy"] {
+  background-color: $color-yellow;
+  color: $color-topBar;
+}
+
+.tippy-box[data-placement^="top"] > .tippy-arrow::before {
+  border-top-color: $color-yellow;
+}
+.tippy-box[data-placement^="bottom"] > .tippy-arrow::before {
+  border-bottom-color: $color-yellow;
+}
+.tippy-box[data-placement^="left"] > .tippy-arrow::before {
+  border-left-color: $color-yellow;
+}
+.tippy-box[data-placement^="right"] > .tippy-arrow::before {
+  border-right-color: $color-yellow;
+}
+
+/* ------------------------------------------------------------------------------------------------ */

@@ -11,19 +11,13 @@ $color-purple: #333456b2;
 $color-turquoise: #a4ebf3;
 $color-yellow: #ffefa1;
 $color-font: #f8fffb;
-$color-grey: #F4F8FD;
+$color-grey: #f4f8fd;
 
 %neon {
   color: #ffffff;
-  text-shadow: 
-    0 0 8px $color-rose, 
-    0 0 2px $color-rose, 
-    0 0 10px $color-rose,
-    0 0 6px $color-rose, 
-    0 0 20px $color-rose, 
-    0 0 20px $color-rose, 
-    0 0 1px $color-rose,
-    0 0 12px $color-rose;
+  text-shadow: 0 0 8px $color-rose, 0 0 2px $color-rose, 0 0 10px $color-rose,
+    0 0 6px $color-rose, 0 0 20px $color-rose, 0 0 20px $color-rose,
+    0 0 1px $color-rose, 0 0 12px $color-rose;
 }
 
 /* ------------------------------------------------------------------------------------------------ */

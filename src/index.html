@@ -22,15 +22,16 @@
   <header class="header">
     <section class="header__container--info">
       <h2 class="animate__animated animate__fadeInDown" id="header__container--info-title">Simon Say!</h2>
-      <div class="timer" id="timerJS">00:00:00</div>
+      <div class="timer tippy-elements" id="timerJS" data-tippy-content="Tiempo de Juego">00:00:00</div>
       <!-- <p class="header__container--difficulty">Difficulty:
-          <select name="difficulty" id="level-Difficulty">
-            <option value="Easy">Easy (+5 lvl)</option>
-            <option value="Normal">Normal (+10 lvl)</option>
-            <option value="Hard">Hard (+20 lvl)</option>
-          </select>
-        </p> -->
-      <p class="header__container--info-level">Lvl: <span id="currentLevel"></span></p>
+            <select name="difficulty" id="level-Difficulty">
+              <option value="Easy">Easy (+5 lvl)</option>
+              <option value="Normal">Normal (+10 lvl)</option>
+              <option value="Hard">Hard (+20 lvl)</option>
+            </select>
+          </p> -->
+      <p class="header__container--info-level tippy-elements" data-tippy-content="Nivel Acutal">Lvl: <span id="currentLevel"></span>
+      </p>
     </section>
   </header>
 
@@ -38,7 +39,7 @@
   <main class="Play-section">
 
     <!-- INTERFAZ DEL JUEGO -->
-    <section class="container--gameboard">
+    <section class="container--gameboard tippy-elements" data-tippy-content="Seleccione las casillas en el orden correcto">
       <article class="gameboard--card">
         <div class="card-grid">
           <div id="blue" class="color blue" data-color="blue"></div>
@@ -80,14 +81,23 @@
 
   </main>
 
-    <!-- CONTACT BAR -->
+  <!-- CONTACT BAR -->
   <footer class="footer">
     <section class="footer-text">
       <p id="footer_author"> Follow me in: </p>
       <i class="fab fa-github-alt"></i>
-      <a id="gitLink" href="https://github.com/Sergio9815/Simon_Say_JS">Sergio González</a>
+      <a class="tippy-elements" data-tippy-content="Project Repository" id="gitLink" href="https://github.com/Sergio9815/Simon_Say_JS">Sergio González</a>
     </section>
   </footer>
+
+  <!-- Production -->
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+  <script>
+    tippy(document.querySelectorAll('.tippy-elements'), {
+      theme: 'colorTippy',
+    });
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.6/dist/sweetalert2.all.min.js"></script>
   <script type="module" src="./logic/timer.js"></script>

@@ -6,6 +6,25 @@
 
 /* ------------------------------------------------------------------------------------------------ */
 /* ------------------------------------------------------------------------------------------------ */
+/* --- --- -- TIPPY THEME -- --- --- */
+.tippy-box[data-theme~="colorTippy"] {
+  background-color: #ffefa1;
+  color: #111116; }
+
+.tippy-box[data-placement^="top"] > .tippy-arrow::before {
+  border-top-color: #ffefa1; }
+
+.tippy-box[data-placement^="bottom"] > .tippy-arrow::before {
+  border-bottom-color: #ffefa1; }
+
+.tippy-box[data-placement^="left"] > .tippy-arrow::before {
+  border-left-color: #ffefa1; }
+
+.tippy-box[data-placement^="right"] > .tippy-arrow::before {
+  border-right-color: #ffefa1; }
+
+/* ------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------ */
 /* --- --- -- GLOBAL CONFIG -- --- --- */
 * {
   margin: 0;
@@ -89,7 +108,7 @@ body {
 
 .footer a:hover {
   text-decoration: none;
-  color: #ff577f; }
+  color: #ffefa1; }
 
 /* ------------------------------------------------------------------------------------------------ */
 /* ------------------------------------------------------------------------------------------------ */
