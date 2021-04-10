@@ -1,0 +1,25 @@
+/* ------------------------------------------------------------------------------------------------ */
+
+/* --- --- -- GLOBAL CONFIG -- --- --- */
+
+* {
+  margin: 0;
+  font-family: "Akaya Telivigala", cursive;
+  outline: none;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #F4F8FD;
+}
+
+%flex {
+  display: flex;
+  align-items: center;
+}
+
+/* ------------------------------------------------------------------------------------------------ */
+

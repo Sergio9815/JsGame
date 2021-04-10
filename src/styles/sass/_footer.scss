@@ -1,0 +1,42 @@
+
+/* ------------------------------------------------------------------------------------------------ */
+
+/* --- --- -- FOOTER -- --- --- */
+
+.footer {
+  @extend %flex;
+  overflow: hidden;
+  bottom: 0;
+  position: absolute;
+  justify-content: center;
+  color: $color-font;
+  height: 40px;
+  width: 100%;
+  background-color: $color-game;
+}
+
+.footer-text {
+  @extend %flex;
+  width: 90%;
+  color: $color-font;
+  font-size: 14px;
+}
+
+.fab {
+  color: $color-font;
+  margin-left: 5px;
+  margin-right: 5px;
+  list-style: none;
+  text-align: center;
+}
+
+.footer-text a {
+  color: $color-font;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: none;
+  color: $color-yellow;
+}
+
+/* ------------------------------------------------------------------------------------------------ */
