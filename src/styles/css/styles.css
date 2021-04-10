@@ -1,0 +1,292 @@
+/* ------------------------------------------------------------------------------------------------ */
+/* --- --- -- COLORS -- --- --- */
+/* ------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------ */
+/* --- --- -- GLOBAL CONFIG -- --- --- */
+* {
+  margin: 0;
+  font-family: "Akaya Telivigala", cursive;
+  outline: none; }
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #F4F8FD; }
+
+.header, .header__container--info, .footer, .footer-text, .container--gameboard, .gameboard--card, .card-controls, .gameMenu, .score__container {
+  display: flex;
+  align-items: center; }
+
+/* ------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------ */
+/* --- --- -- HEADER -- --- --- */
+.header {
+  background-color: #0e2342;
+  width: 100%;
+  height: 60px;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 13px 0 rgba(185, 185, 185, 0.25); }
+
+.header__container--info {
+  width: 90%;
+  color: #f8fffb;
+  letter-spacing: 2px;
+  /* background-color: lightgreen; */
+  justify-content: space-around; }
+
+.header__container--info-title {
+  font-size: 30px; }
+
+.timer {
+  font-size: 25px;
+  color: #f8fffb; }
+
+.header__container--info-level {
+  color: #f8fffb;
+  font-size: 25px; }
+
+/* ------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------ */
+/* --- --- -- FOOTER -- --- --- */
+.footer {
+  overflow: hidden;
+  bottom: 0;
+  position: absolute;
+  justify-content: center;
+  color: #f8fffb;
+  height: 40px;
+  width: 100%;
+  background-color: #09265193; }
+
+.footer-text {
+  width: 90%;
+  color: #f8fffb;
+  font-size: 14px; }
+
+.fab {
+  color: #f8fffb;
+  margin-left: 5px;
+  margin-right: 5px;
+  list-style: none;
+  text-align: center; }
+
+.footer-text a {
+  color: #f8fffb;
+  text-decoration: none; }
+
+.footer a:hover {
+  text-decoration: none;
+  color: #ffefa1; }
+
+/* ------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------ */
+/* --- --- -- GAME BOARD -- --- --- */
+.Play-section {
+  /* background-color: lightgreen; */
+  border-top: 2px dashed #09265193;
+  border-bottom: 2px dashed #09265193;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+  width: 70%;
+  margin-top: 30px;
+  justify-content: space-around;
+  align-items: center; }
+
+.container--gameboard {
+  justify-content: center;
+  background-color: #09265193;
+  border-radius: 10px; }
+
+.gameboard--card {
+  width: 300px;
+  height: 370px;
+  margin: 10px;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: #f8fffb;
+  border-radius: 11px;
+  padding: 10px;
+  box-sizing: border-box; }
+
+.card-grid {
+  display: grid;
+  width: 95%;
+  height: 80%;
+  /* background-color: $color-turquoise; */
+  grid-template-columns: repeat(4, 1fr); }
+
+/* ------------------------------------------------------------------------------------------------ */
+/* --- --- -- CONTROLS -- --- --- */
+.card-controls {
+  width: 90%;
+  height: 50%;
+  justify-content: space-around; }
+
+.card-controls path {
+  fill: #ff577f; }
+
+.card-controls svg {
+  width: 60px; }
+
+.controls-circle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  transform: rotate(-25deg);
+  gap: 35px; }
+
+.controls-circle path {
+  fill: #a4ebf3; }
+
+.controls-circle svg {
+  width: 20px; }
+
+/* ------------------------------------------------------------------------------------------------ */
+/* --- --- -- COLORS -- --- --- */
+.blue {
+  background: #36b5b0; }
+
+.blue.light {
+  background: #45e2dd; }
+
+.rose {
+  background: #ff8ba7; }
+
+.rose.light {
+  background: #fdbccc; }
+
+.yellow {
+  background: #fcdf5f; }
+
+.yellow.light {
+  background: #f1e5ad; }
+
+.green {
+  background: #7fcd91; }
+
+.green.light {
+  background: #9cfab2; }
+
+/* ------------------------------------------------------------------------------------------------ */
+/* --- --- -- MENU -- --- --- */
+.gameMenu {
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 6px;
+  width: 300px;
+  height: 370px; }
+
+.menu--title {
+  font-family: 'Train One', cursive;
+  font-size: 50px;
+  color: #333456;
+  letter-spacing: 5px; }
+
+.score__container {
+  justify-content: center;
+  flex-direction: column; }
+
+.menu--score, #score {
+  font-family: 'Train One', cursive;
+  color: #333456;
+  font-size: 25px;
+  letter-spacing: 7px; }
+
+#score {
+  font-weight: bold;
+  font-size: 35px; }
+
+.btn-start {
+  width: 80%;
+  height: 50px;
+  background: #a4ebf3;
+  color: #333456;
+  border-radius: 10px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  border: none;
+  outline: none;
+  cursor: pointer; }
+
+.btn-start:hover {
+  background: #ff577f;
+  color: #f8fffb; }
+
+/* ------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------ */
+/* --- --- -- RESPONSIVE DESIGN -- --- --- */
+@media only screen and (max-width: 1000px) {
+  .Play-section {
+    width: 80%; } }
+@media only screen and (max-width: 835px) {
+  .Play-section {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 0;
+    border: none;
+    padding: 0;
+    margin-bottom: 0;
+    height: 600px; }
+
+  .card-grid {
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 1fr); }
+
+  .gameMenu {
+    width: 340px;
+    height: 100px; }
+
+  .menu--title {
+    display: none; }
+
+  .score__container {
+    flex-direction: row;
+    gap: 15px; }
+
+  .menu--score, #score {
+    margin: 15px 0 5px 0;
+    color: #0e2342;
+    font-size: 20px; }
+
+  .btn-start {
+    width: 100%; }
+
+  .footer {
+    position: relative; }
+
+  .footer-text {
+    justify-content: center;
+    align-items: center; } }
+/* ------------------------------------------------------------------------------------------------ */
+/* --- --- -- MOBILE DESIGN -- --- --- */
+@media only screen and (max-width: 500px) {
+  .header {
+    flex-direction: column; }
+
+  .Play-section {
+    margin-top: 10px;
+    margin-bottom: 20px; }
+
+  .gameMenu {
+    width: 340px;
+    height: 100px;
+    background-color: none; }
+
+  .menu--title {
+    display: none; }
+
+  .menu--score {
+    margin: 15px 0 5px 0;
+    color: #0e2342; }
+
+  .btn-start {
+    width: 100%; } }
+/* ------------------------------------------------------------------------------------------------ */
+
+/*# sourceMappingURL=styles.css.map */

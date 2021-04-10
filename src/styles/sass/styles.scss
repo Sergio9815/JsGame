@@ -1,100 +1,42 @@
-/* DECLARACION DE VARIABLES */
-:root {
-  --rose: #e5707e;
-  --turquoise: #94ebcd;
-  --purple: #333456;
-  --purple-light: #848ccf;
-  --grey-light: #dddddd;
-  --grey-dark: #495464;
-  --yellow: #ffefa1;
-  --shadow: 0 0 13px 0 rgba(185, 185, 185, 0.25);
-}
-
-* {
-  margin: 0;
-  font-family: "Akaya Telivigala", cursive;
-  outline: none;
-}
-
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background-color: var(--purple);
-}
+@import "colors";
+@import "global";
+@import "header";
+@import "footer";
 
 /* ------------------------------------------------------------------------------------------------ */
-/* Barra de titulo */
 
-.header {
-  background-color: white;
-  display: flex;
-  width: 100%;
-  height: 60px;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  position: relative;
-  z-index: 1;
-  box-shadow: var(--shadow);
-}
-
-.header__container--info {
-  display: flex;
-  width: 90%;
-  align-items: center;
-  color: var(--purple);
-  letter-spacing: 2px;
-  /* background-color: lightgreen; */
-  justify-content: space-around;
-}
-
-.header__container--info-title {
-  font-size: 30px;
-}
-
-.timer {
-  font-size: 25px;
-  color: var(--rose);
-}
-
-.header__container--info-level {
-  color: var(--rose);
-  font-size: 25px;
-}
-
-/* ------------------------------------------------------------------------------------------------ */
-/* Tablero */
+/* --- --- -- GAME BOARD -- --- --- */
 
 .Play-section {
   /* background-color: lightgreen; */
+  border-top: 2px dashed $color-game;
+  border-bottom: 2px dashed $color-game;
+  padding-top: 30px;
+  padding-bottom: 30px;
   display: flex;
   width: 70%;
-  margin-top: 60px;
+  margin-top: 30px;
   justify-content: space-around;
   align-items: center; 
 }
 
 .container--gameboard {
-  display: flex;
-  align-items: center;
+  @extend %flex;
   justify-content: center;
-  background-color: var(--grey-light);
+  background-color: $color-game;
   border-radius: 10px;
 }
 
 .gameboard--card {
-  display: flex;
+  @extend %flex;
   width: 300px;
   height: 370px;
-  margin: 20px;
-  align-items: center;
+  margin: 10px;
   justify-content: space-between;
   flex-direction: column;
-  background-color: white;
-  border-radius: 6px;
-  padding: 15px;
+  background-color: $color-font;
+  border-radius: 11px;
+  padding: 10px;
   box-sizing: border-box;
 }
 
@@ -102,24 +44,23 @@ body {
   display: grid;
   width: 95%;
   height: 80%;
-  /* background-color: var(--turquoise); */
+  /* background-color: $color-turquoise; */
   grid-template-columns: repeat(4, 1fr);
 }
 
 /* ------------------------------------------------------------------------------------------------ */
-/* Controles */
+
+/* --- --- -- CONTROLS -- --- --- */
 
 .card-controls {
-  display: flex;
+  @extend %flex;
   width: 90%;
   height: 50%;
-  align-items: center;
-  /* background-color: var(--yellow); */
   justify-content: space-around;
 }
 
 .card-controls path {
-  fill: var(--rose);
+  fill: $color-rose;
 }
 
 .card-controls svg {
@@ -134,7 +75,7 @@ body {
 }
 
 .controls-circle path {
-  fill: var(--purple-light);
+  fill: $color-turquoise;
 }
 
 .controls-circle svg {
@@ -143,7 +84,8 @@ body {
 
 
 /* ------------------------------------------------------------------------------------------------ */
-/* Colores del tablero */
+
+/* --- --- -- COLORS -- --- --- */
 
 .blue {
   background: #36b5b0;
@@ -178,14 +120,15 @@ body {
 }
 
 /* ------------------------------------------------------------------------------------------------ */
-/* MENU */
+
+/* --- --- -- MENU -- --- --- */
 
 .gameMenu {
-  display: flex;
+  @extend %flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-around;
-  background-color: var(--yellow);
+  // background-color: $color-yellow;
+  // border: 1px dashed $color-topBar;
   border-radius: 6px;
   width: 300px;
   height: 370px;
@@ -194,20 +137,19 @@ body {
 .menu--title {
   font-family: 'Train One', cursive;
   font-size: 50px;
-  color: var(--purple);
+  color: $color-purple;
   letter-spacing: 5px;
 }
 
 .score__container {
-  display: flex;
-  align-items: center;
+  @extend %flex;
   justify-content: center;
   flex-direction: column;
 }
 
 .menu--score, #score {
   font-family: 'Train One', cursive;
-  color: var(--purple);
+  color: $color-purple;
   font-size: 25px;
   letter-spacing: 7px;
 }
@@ -220,64 +162,27 @@ body {
 .btn-start {
   width: 80%;
   height: 50px;
-  background: var(--turquoise);
-  color: var(--purple);
+  background: $color-turquoise;
+  color: $color-purple;
   border-radius: 10px;
   font-size: 20px;
-  letter-spacing: 7px;
+  letter-spacing: 2px;
   border: none;
   outline: none;
   cursor: pointer;
 }
 
 .btn-start:hover {
-  background: var(--rose);
-  color: white;
+  background: $color-rose;
+  color: $color-font;
 }
 
 /* ------------------------------------------------------------------------------------------------ */
-/* Barra inferior */
 
-.footer {
-  display: flex;
-  overflow: hidden;
-  bottom: 0;
-  position: absolute;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  height: 40px;
-  width: 100%;
-  background-color: var(--purple-light);
-}
-
-.footer-text {
-  display: flex;
-  width: 90%;
-  align-items: center;
-  color: white;
-  font-size: 14px;
-}
-
-.fab {
-  color: white;
-  margin-left: 5px;
-  margin-right: 5px;
-  list-style: none;
-  text-align: center;
-}
-
-.footer-text a {
-  color: white;
-  text-decoration: none;
-}
-.footer a:hover {
-  text-decoration: none;
-  color: var(--yellow);
-}
 
 /* ------------------------------------------------------------------------------------------------ */
-/* RESPONSIVE DESIGN */
+
+/* --- --- -- RESPONSIVE DESIGN -- --- --- */
 
 @media only screen and (max-width: 1000px) {
   .Play-section {
@@ -288,14 +193,17 @@ body {
 
 @media only screen and (max-width: 835px) {
 
-.Play-section {
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 0px;
-  margin-bottom: 20PX;
-  height: 600px;
+  .Play-section {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 0;
+    border: none;
+    padding: 0;
+    margin-bottom: 0;
+    height: 600px;
 }
+
 
 .card-grid {
   grid-template-rows: repeat(4, 1fr);
@@ -305,7 +213,6 @@ body {
 .gameMenu {
   width: 340px;
   height: 100px;
-  background-color: var(--purple);
 }
 
 .menu--title {
@@ -318,7 +225,7 @@ body {
 }
 .menu--score, #score {
   margin: 15px 0 5px 0;
-  color: var(--yellow);
+  color: $color-topBar;
   font-size: 20px;
 }
 
@@ -338,7 +245,8 @@ body {
 }
 
 /* ------------------------------------------------------------------------------------------------ */
-/* MOBILE DESIGN */
+
+/* --- --- -- MOBILE DESIGN -- --- --- */
 
 @media only screen and (max-width: 500px) {
 
@@ -354,7 +262,7 @@ body {
   .gameMenu {
     width: 340px;
     height: 100px;
-    background-color: var(--purple);
+    background-color: none;
   }
   
   .menu--title {
@@ -363,7 +271,7 @@ body {
   
   .menu--score {
     margin: 15px 0 5px 0;
-    color: var(--yellow);
+    color: $color-topBar;
   }
   
   .btn-start {
@@ -371,3 +279,5 @@ body {
   }
   
   }
+
+/* ------------------------------------------------------------------------------------------------ */
