@@ -1,5 +1,9 @@
 /* ------------------------------------------------------------------------------------------------ */
 /* --- --- -- COLORS -- --- --- */
+.menu--title {
+  color: #ffffff;
+  text-shadow: 0 0 8px #ff577f, 0 0 2px #ff577f, 0 0 10px #ff577f, 0 0 6px #ff577f, 0 0 20px #ff577f, 0 0 20px #ff577f, 0 0 1px #ff577f, 0 0 12px #ff577f; }
+
 /* ------------------------------------------------------------------------------------------------ */
 /* ------------------------------------------------------------------------------------------------ */
 /* --- --- -- GLOBAL CONFIG -- --- --- */
@@ -39,11 +43,13 @@ body {
   width: 90%;
   color: #f8fffb;
   letter-spacing: 2px;
-  /* background-color: lightgreen; */
   justify-content: space-around; }
 
 .header__container--info-title {
   font-size: 30px; }
+
+#header__container--info-title {
+  color: #cafabb; }
 
 .timer {
   font-size: 25px;
@@ -83,15 +89,14 @@ body {
 
 .footer a:hover {
   text-decoration: none;
-  color: #cafabb; }
+  color: #ff577f; }
 
 /* ------------------------------------------------------------------------------------------------ */
 /* ------------------------------------------------------------------------------------------------ */
 /* --- --- -- GAME BOARD -- --- --- */
 .Play-section {
-  /* background-color: lightgreen; */
-  border-top: 1px dashed #cafabb;
-  border-bottom: 1px dashed #cafabb;
+  border-top: 1.5px dashed #cafabb;
+  border-bottom: 1.5px dashed #cafabb;
   padding-top: 30px;
   padding-bottom: 30px;
   display: flex;
@@ -119,7 +124,6 @@ body {
   display: grid;
   width: 95%;
   height: 80%;
-  /* background-color: $color-turquoise; */
   grid-template-columns: repeat(4, 1fr); }
 
 /* ------------------------------------------------------------------------------------------------ */
@@ -127,25 +131,22 @@ body {
 .card-controls {
   width: 90%;
   height: 50%;
-  justify-content: space-around; }
-
-.card-controls path {
-  fill: #ff577f; }
-
-.card-controls svg {
-  width: 60px; }
+  justify-content: space-around;
+  transform: rotate(-2deg); }
+  .card-controls path {
+    fill: #ff577f; }
+  .card-controls svg {
+    width: 70px; }
 
 .controls-circle {
   display: grid;
   grid-template-columns: 1fr 1fr;
   transform: rotate(-25deg);
   gap: 35px; }
-
-.controls-circle path {
-  fill: #a4ebf3; }
-
-.controls-circle svg {
-  width: 20px; }
+  .controls-circle path {
+    fill: #a4ebf3; }
+  .controls-circle svg {
+    width: 30px; }
 
 /* ------------------------------------------------------------------------------------------------ */
 /* --- --- -- COLORS -- --- --- */
@@ -183,18 +184,18 @@ body {
   height: 370px; }
 
 .menu--title {
-  font-family: 'Train One', cursive;
+  font-family: "Train One", cursive;
   font-size: 50px;
-  color: #ff577f;
   letter-spacing: 5px; }
 
 .score__container {
   justify-content: center;
   flex-direction: column; }
 
-.menu--score, #score {
-  font-family: 'Train One', cursive;
-  color: #ff577f;
+.menu--score,
+#score {
+  font-family: "Train One", cursive;
+  color: #cafabb;
   font-size: 25px;
   letter-spacing: 7px; }
 
@@ -249,7 +250,8 @@ body {
     flex-direction: row;
     gap: 15px; }
 
-  .menu--score, #score {
+  .menu--score,
+  #score {
     margin: 15px 0 5px 0;
     color: #cafabb;
     font-size: 20px; }

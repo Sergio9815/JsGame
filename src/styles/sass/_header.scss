@@ -20,12 +20,15 @@
   width: 90%;
   color: $color-font;
   letter-spacing: 2px;
-  /* background-color: lightgreen; */
   justify-content: space-around;
 }
 
 .header__container--info-title {
   font-size: 30px;
+}
+
+#header__container--info-title {
+  color: $color-title;
 }
 
 .timer {
