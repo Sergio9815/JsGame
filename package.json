@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/Sergio9815/Simon_Say_JS#readme",
   "dependencies": {
-    "@sagb_24/mytimerjs": "^1.4.0",
+    "@sagb_24/mytimerjs": "^1.4.1",
     "animate.css": "^4.1.1",
     "sweetalert2": "^10.16.2",
     "tippy.js": "^6.3.1"
