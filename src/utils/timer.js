@@ -1,4 +1,4 @@
-import Timer from "../libs/myTimer.js";
+import Timer from "../libs/mytimer.min.js";
 
 const play = document.querySelector('#btn-Start')
 
